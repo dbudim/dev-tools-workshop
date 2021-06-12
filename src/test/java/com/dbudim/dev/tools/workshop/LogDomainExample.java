@@ -22,7 +22,7 @@ public class LogDomainExample extends FixtureDevTools {
     @Test
     public void logConsole() {
         devTools.addListener(Log.entryAdded(), logEntry -> logger.info(logEntry.getText()));
-        driver.get("https://www.i.ua/");
+        driver.get("https://catalog-education.oracle.com/pls/apex/f?p=1010:26:110246492646783");
     }
 
 }

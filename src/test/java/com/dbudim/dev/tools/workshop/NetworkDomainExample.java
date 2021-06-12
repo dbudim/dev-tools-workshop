@@ -2,7 +2,6 @@ package com.dbudim.dev.tools.workshop;
 
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
-import io.qameta.allure.Allure;
 import org.openqa.selenium.devtools.v91.log.Log;
 import org.openqa.selenium.devtools.v91.network.Network;
 import org.openqa.selenium.devtools.v91.network.model.ConnectionType;
@@ -40,7 +39,7 @@ public class NetworkDomainExample extends FixtureDevTools {
     public void setExtraHeaders() {
         devTools.send(Network.setExtraHTTPHeaders(
                 new Headers(Map.of(
-                        "my-first-header", "some first value",
+                        "my-first-header", "John WIck",
                         "my-second-header", "second value"
                 ))));
         openGithub();
@@ -57,7 +56,7 @@ public class NetworkDomainExample extends FixtureDevTools {
     public void blockTraffic() {
         devTools.send(Network.setBlockedURLs(List.of("*assets*")));
         devTools.send(Log.enable());
-        devTools.addListener(Log.entryAdded(), logEntry -> Allure.addAttachment("logs", logEntry.getText()));
+        devTools.addListener(Log.entryAdded(), logEntry -> System.out.println(logEntry));
         openGithub();
     }
 

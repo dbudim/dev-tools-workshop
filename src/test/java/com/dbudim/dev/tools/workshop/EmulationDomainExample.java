@@ -34,7 +34,7 @@ public class EmulationDomainExample extends FixtureDevTools {
 
     @Test
     public void emulatePageScale() {
-        devTools.send(Emulation.setPageScaleFactor(250));
         openGithub();
+        devTools.send(Emulation.setPageScaleFactor(550));
     }
 }
